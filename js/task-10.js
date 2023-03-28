@@ -8,16 +8,15 @@ createBtn.addEventListener('click', () => createBoxes(input.value));
 destroyBtn.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-  let width = 30;
-  let height = 30;
+  boxesContainer.innerHTML = '';
+  let size = 30;
   for (let i = 0; i < amount; i += 1) {
     const box = document.createElement('div');
-    box.style.width = `${width}px`;
-    box.style.height = `${height}px`;
+    box.style.width = `${size}px`;
+    box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
     boxesContainer.appendChild(box);
-    width += 10;
-    height += 10;
+    size += 10;
   }
 }
 
